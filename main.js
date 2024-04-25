@@ -6,8 +6,10 @@ const tempoObjetivo02 = new Date("2024-10-05T00:00:00");
 const tempoObjetivo03 = new Date("2024-10-05T00:00:00");
 const tempoObjetivo04 = new Date("2024-10-05T00:00:00");
 let tempoAtual = new Date();
-
-contadores[0].textContent = calculaTempo(tempoObjetivo01);
+const tempos = [tempoObjetivo01, tempoObjetivo02, tempoObjetivo03, tempoObjetivo04]; 
+for (let i = 0; i< contadores.length; i++){
+    contadores[i].textContent = calculaTempo(tempos[i]);
+}
 
 for(let i=0; i< botoes.length; i++){
     botoes[i].onclick = function(){
