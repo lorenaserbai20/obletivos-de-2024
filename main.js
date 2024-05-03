@@ -31,12 +31,19 @@ function calculaTempo(tempoObjetivo){
     horas %=24;
 
     if (tempoFinal >0){
-        return[dias, horas, minutos, segundos];
+        return dias + " Dias: " + horas + " Horas: " + minutos + " Minutos: " + segundos + " Segundos ";
     }
-
     else{
-        return[0,0,0,0];
+        return "Prazo Finalizado";
     }
-
-    return dias + " Dias: " + horas + " Horas: " + minutos + " Minutos: " + segundos + " Segundos "; 
 }
+function atulizaCronometro(){
+    for (let i=0; i<contadores.length;i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);
+    }
+}
+function comecaCronometro(){
+    atulizaCronometro();
+    setInterval(atulizaCronometro, 1000);
+}
+comecaCronometro();
