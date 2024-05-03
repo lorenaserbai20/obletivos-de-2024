@@ -46,4 +46,4 @@ function comecaCronometro(){
     atulizaCronometro();
     setInterval(atulizaCronometro, 1000);
 }
-comecaCronometro();
+//comecaCronometro();
