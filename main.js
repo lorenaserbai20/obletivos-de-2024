@@ -31,19 +31,23 @@ function calculaTempo(tempoObjetivo){
     horas %=24;
 
     if (tempoFinal >0){
-        return dias + " Dias: " + horas + " Horas: " + minutos + " Minutos: " + segundos + " Segundos ";
+        return [dias,horas,minutos,segundos];
     }
     else{
-        return "Prazo Finalizado";
+        return [0,0,0,0];
     }
 }
 function atulizaCronometro(){
+    document.getElementById("dias0").textContent = calculaTempo(tempo[0])[0];
+    document.getElementById("horas0").textContent = calculaTempo(tempo[0])[1];
+    document.getElementById("min0").textContent = calculaTempo(tempo[0])[2];
+    document.getElementById("seg0").textContent = calculaTempo(tempo[0])[3];
     for (let i=0; i<contadores.length;i++){
-        contadores[i].textContent = calculaTempo(tempos[i]);
+        //contadores[i].textContent = calculaTempo(tempos[i]);
     }
 }
 function comecaCronometro(){
     atulizaCronometro();
     setInterval(atulizaCronometro, 1000);
 }
-//comecaCronometro();
+comecaCronometro();
